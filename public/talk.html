@@ -71,7 +71,7 @@
       const Cusername = params.get("username");
       const Cavatar = `https://avatars.dicebear.com/api/gridy/${Cusername}.svg`;
       // socket
-      const socket = io("http://localhost:3000");
+      const socket = io("https://talk-to-john-doe.herokuapp.com");
       socket.emit("join Room", {
         username: Cusername,
         avatar: Cavatar,
