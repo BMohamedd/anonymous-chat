@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./css/index.css" />
+    <title>Talk To John Doe</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="heading">
+        <img src="./assets/logo.png" style="max-width: 80px" alt="logo" />
+        <h1>Talk To John Doe</h1>
+      </div>
+      <form action="">
+        <h2>Username:</h2>
+        <input
+          type="text"
+          id="username-input"
+          class="input"
+          placeholder="John Doe"
+          max="15"
+          min="5"
+          required
+        />
+        <!-- <h2 for="cars">Choose a room:</h2> -->
+        <!-- <select name="cars" class="input" required>
+          <option value="public">Public room</option>
+          <option value="private">Private room</option>
+        </select> -->
+        <input type="submit" class="button" style="margin-top: 1em" />
+      </form>
+    </div>
+    <p>
+      Created by
+      <a
+        href="https://github.com/BMohamedd"
+        target="_blank"
+        referrerpolicy="no-referrer"
+        >mohamed</a
+      >
+    </p>
+    <script>
+      const username = document.querySelector("#username-input");
+      // const room = document.querySelector("select");
+      const form = document.querySelector("form");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (username.value) {
+          const anchor = document.createElement("a");
+          anchor.setAttribute(
+            "href",
+            `chat?roomType=public&username=${username.value}`
+          );
+          anchor.style.display = "none";
+          form.append(anchor);
+          anchor.click();
+        }
+        return;
+      });
+    </script>
+  </body>
+</html>
