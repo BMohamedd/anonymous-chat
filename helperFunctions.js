@@ -6,7 +6,7 @@ module.exports.Chatbot = (message) => {
     name: "anonymousBot",
     message,
     avatar: "https://avatars.dicebear.com/api/bottts/mad.svg",
-    time: moment(new Date()).fromNow(),
+    time: moment().format("ddd, hA"),
   };
 };
 module.exports.addToPublicRoom = ({ id, username, avatar }) => {
@@ -28,7 +28,7 @@ module.exports.message = ({ username, avatar, message }) => {
     name: username,
     message: message,
     avatar: avatar,
-    time: moment(new Date()).fromNow(),
+    time: moment().format("ddd, hA"),
   };
 };
 module.exports.handleDisconnect = (id) => {
@@ -56,7 +56,7 @@ module.exports.handleDisconnect = (id) => {
     message: `${username} left the chat.`,
     room,
     avatar,
-    time: moment(new Date()).fromNow(),
+    time: moment().format("ddd, hA"),
   };
 };
 module.exports.getCurrentUsers = () => {
